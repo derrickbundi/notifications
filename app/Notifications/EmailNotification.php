@@ -26,11 +26,9 @@ class EmailNotification extends Notification implements ShouldQueue
 
     public function toMail($notifiable)
     {
-        return (new MailMessage)->view('emails.emailReminder', ['user' => $this->user]);
-                    // ->subject('Renewal Reminder | Notification')
-                    // ->line('The introduction to the notification.')
-                    // ->action('Notification Action', url('/'))
-                    // ->line('Thank you for using our application!');
+        return (new MailMessage)
+                    ->subject('Renewal Reminder | Notification')
+                    ->view('emails.emailReminder', ['user' => $this->user]);
     }
 
     public function toArray($notifiable)
