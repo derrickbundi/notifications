@@ -6,20 +6,22 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+// use App\User;
 
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $count;
+
+    public $userOnExp;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($count)
+    public function __construct($userOnExp)
     {
-        $this->count = $count;
+        $this->userOnExp = $userOnExp;
     }
 
     /**
