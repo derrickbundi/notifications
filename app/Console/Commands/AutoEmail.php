@@ -20,11 +20,17 @@ class AutoEmail extends Command
 
     public function handle()
     {
-        $userOnExp = \DB::table('users')
+        $userOnExps = \DB::table('users')
                 //   ->whereRaw('Date(created_at) = CURDATE()')
                   ->where('exp', '=', 11)
                   ->get();
-        foreach($userOnExp as $exp){
+        foreach($userOnExps as $userOnExp) {
+            $userOnExp;
+        }
+        $forEach = \DB::table('users')
+                  ->where('exp', '=', 11)
+                  ->get();
+        foreach($forEach as $exp){
             if($exp->exp == 11){
                 Mail::to($exp->email)->send(new SendMail($userOnExp));
             }

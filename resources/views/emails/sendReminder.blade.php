@@ -68,13 +68,12 @@
                 <div class="m-b-md">
                     <h3>Email Notification Reminder</h3>
                     <hr>
-                {{-- @foreach($userOnExp as $OnExp) --}}
-                <p>Hi, {{ $exp->name }} you have {{ $exp->exp }} days, your
+                <p>Dear Member, I wish to notify you have that you only have {{ $userOnExp->exp }} days, your
                 Package to expire </p>
                 <p>Kindly renew your subscription..</p>
-                <p>{{ $exp->email }}</p>
+                <p>Regards,</p>
                 {{-- @endforeach --}}
-                <p>Express Team</p>
+                <p>Obitell Team</p>
                 </div>
 
             </div>

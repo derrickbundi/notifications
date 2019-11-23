@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('emails:users')
                  ->timezone('Africa/Nairobi')
-                 ->dailyAt('22:46');
+                 ->dailyAt('18:50');
     }
 
     protected function commands()
